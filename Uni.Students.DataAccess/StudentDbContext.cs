@@ -22,6 +22,8 @@ namespace Uni.Students.DataAccess
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Student>().HasKey(s => new { s.Id });
             modelBuilder.Entity<Student>().Property(s => s.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Student>().Property(s => s.FirstName).IsRequired();
+            modelBuilder.Entity<Student>().Property(s => s.LastName).IsRequired();
             modelBuilder.Entity<Student>().HasData(new Student { Id = new Guid("F0668573-0717-4B47-97CF-3842FF4B17AC"), FirstName = "TestFirstName", LastName = "TestLastName" });
         }
     }

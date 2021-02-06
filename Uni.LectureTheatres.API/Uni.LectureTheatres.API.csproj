@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>a9eb2c21-7b04-4934-b7ff-62892e93b0d0</UserSecretsId>
+    <UserSecretsId>70900e7f-053d-492c-9bfd-58bdf9693213</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Uni.Students.DataAccess\Uni.Students.DataAccess.csproj" />
-    <ProjectReference Include="..\Uni.Students.Domain\Uni.Students.Domain.csproj" />
+    <ProjectReference Include="..\Uni.LectureTheatres.DataAccess\Uni.LectureTheatres.DataAccess.csproj" />
+    <ProjectReference Include="..\Uni.LectureTheatres.Domain\Uni.LectureTheatres.Domain.csproj" />
   </ItemGroup>
 
 </Project>

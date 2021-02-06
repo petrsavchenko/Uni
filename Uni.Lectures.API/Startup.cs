@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Uni.Students.DataAccess;
+using Uni.Lectures.DataAccess;
 
-namespace Uni.Students.API
+namespace Uni.Lectures.API
 {
     public class Startup
     {
@@ -21,11 +21,11 @@ namespace Uni.Students.API
         public void ConfigureServices(IServiceCollection services)
         {
             //TODO move out into separate project
-            services.AddDbContext<StudentDbContext>();
+            services.AddDbContext<LectureDbContext>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Uni.Students.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Uni.Lectures.API", Version = "v1" });
             });
         }
 
@@ -36,7 +36,7 @@ namespace Uni.Students.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Uni.Students.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Uni.Lectures.API v1"));
             }
 
             app.UseHttpsRedirection();

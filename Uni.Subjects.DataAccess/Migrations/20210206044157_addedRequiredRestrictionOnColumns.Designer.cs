@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Uni.Subjects.DataAccess;
 
 namespace Uni.Subjects.DataAccess.Migrations
 {
     [DbContext(typeof(SubjectDbContext))]
-    partial class SubjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210206044157_addedRequiredRestrictionOnColumns")]
+    partial class addedRequiredRestrictionOnColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:61443",
-      "sslPort": 44358
+      "applicationUrl": "http://localhost:57359",
+      "sslPort": 44390
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Uni.Students.API": {
+    "Uni.LectureTheatres.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
@@ -25,7 +25,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": "true",
-      "applicationUrl": "https://localhost:3001;http://localhost:3000"
+      "applicationUrl": "https://localhost:2001;http://localhost:2000"
     },
     "Docker": {
       "commandName": "Docker",

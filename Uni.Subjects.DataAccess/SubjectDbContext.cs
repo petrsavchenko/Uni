@@ -25,6 +25,7 @@ namespace Uni.Subjects.DataAccess
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Subject>().HasKey(s => new { s.Id });
             modelBuilder.Entity<Subject>().Property(s => s.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Subject>().Property(s => s.Name).IsRequired();
 
             modelBuilder.Entity<SubjectStudent>().HasKey(s => new { s.StudentId, s.SubjectId });
 

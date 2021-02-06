@@ -23,6 +23,7 @@ namespace Uni.LectureTheatres.DataAccess
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<LectureTheatre>().HasKey(s => new { s.Id });
             modelBuilder.Entity<LectureTheatre>().Property(s => s.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<LectureTheatre>().Property(s => s.Name).IsRequired();
 
             modelBuilder.Entity<LectureTheatre>().HasData(new LectureTheatre { Id = new Guid("A0668573-0717-4B47-97CF-3842FF4B17AD"), Name = "Room15_Test", Capacity = 100 });
         }

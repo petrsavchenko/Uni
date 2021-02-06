@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Uni.LectureTheatres.DataAccess;
+using Uni.Students.DataAccess;
 
-namespace Uni.LectureTheatres.DataAccess.Migrations
+namespace Uni.Students.DataAccess.Migrations
 {
-    [DbContext(typeof(LectureTheatreDbContext))]
-    partial class LectureTheatreDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(StudentDbContext))]
+    [Migration("20210206044103_addedRequiredRestrictionOnColumns")]
+    partial class addedRequiredRestrictionOnColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,29 +21,30 @@ namespace Uni.LectureTheatres.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("Uni.LectureTheatres.Domain.LectureTheatre", b =>
+            modelBuilder.Entity("Uni.Students.Domain.Student", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Capacity")
-                        .HasColumnType("int");
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("LectureTheatres");
+                    b.ToTable("Students");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a0668573-0717-4b47-97cf-3842ff4b17ad"),
-                            Capacity = 100,
-                            Name = "Room15_Test"
+                            Id = new Guid("f0668573-0717-4b47-97cf-3842ff4b17ac"),
+                            FirstName = "TestFirstName",
+                            LastName = "TestLastName"
                         });
                 });
 #pragma warning restore 612, 618
